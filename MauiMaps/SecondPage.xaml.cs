@@ -6,9 +6,8 @@ using Microsoft.Maui.Maps;
 
 public partial class SecondPage : ContentPage
 {
-	public SecondPage(SecondPageViewModel viewModel)
+	public SecondPage()
 	{
-		BindingContext = viewModel;
 		InitializeComponent();
 		InitMap1();
 	}
@@ -40,12 +39,5 @@ public partial class SecondPage : ContentPage
 		// 	await Toast.Make("Welcome to Crimea").Show();
 		// };
 		MyMap.MoveToRegion(new MapSpan(new Location(47, 31), 10, 15));
-	}
-
-	void OnNavigateToMainPageClicked(object? sender, EventArgs e)
-	{
-		var services = Application.Current!.Handler!.MauiContext!.Services;
-		var mainPage = services.GetRequiredService<MainPage>();
-		Application.Current.Windows[0].Page = mainPage;
 	}
 }

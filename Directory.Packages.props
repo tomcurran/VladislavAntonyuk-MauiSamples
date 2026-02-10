@@ -40,6 +40,7 @@
     <PackageVersion Include="Plugin.BLE" Version="3.2.0-beta.2" />
     <PackageVersion Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
     <PackageVersion Include="Plugin.Maui.Audio" Version="4.0.0" />
+    <PackageVersion Include="Prism.DryIoc.Maui" Version="9.0.537" />
     <PackageVersion Include="Refit" Version="8.0.0" />
     <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0" />
     <PackageVersion Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />

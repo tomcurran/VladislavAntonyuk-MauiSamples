@@ -6,8 +6,7 @@
     xmlns:mauiMaps="clr-namespace:MauiMaps"
     xmlns:models="clr-namespace:MauiMaps.Models"
     xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
-    x:DataType="mauiMaps:MainPageViewModel"
-    Shell.NavBarIsVisible="False">
+    x:DataType="mauiMaps:MainPageViewModel">
 
 	<Grid>
 		<maps:Map
@@ -32,8 +31,13 @@
 			            BackgroundColor="White">
 				<HorizontalStackLayout>
 					<Button
-		                Clicked="OnNavigateToSecondPageClicked"
+		                Command="{Binding NavigateToSecondPageCommand}"
 		                Text="Go to Second Page" />
+					<!--
+					<Button
+		                Command="{Binding NavigateBackCommand}"
+		                Text="Go back" />
+		                -->
 				</HorizontalStackLayout>
 			</ScrollView>
 			<ScrollView Orientation="Horizontal"

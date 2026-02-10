@@ -5,8 +5,9 @@ using AutoFixture;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Models;
+using Prism.Navigation;
 
-public partial class SecondPageViewModel(IFixture fixture) : ObservableObject
+public partial class SecondPageViewModel(IFixture fixture, INavigationService navigationService) : ObservableObject
 {
 	private LocationPin? currentLocationPin;
 
@@ -58,6 +59,18 @@ public partial class SecondPageViewModel(IFixture fixture) : ObservableObject
 			LocationPins.Add(currentLocationPin);
 		});
 		await Geolocator.Default.StartListening(progress, cancellationToken);
+	}
+
+	[RelayCommand]
+	private async Task NavigateToMainPage()
+	{
+		await navigationService.NavigateAsync("/MainPage");
+	}
+
+	[RelayCommand]
+	private async Task NavigateBack()
+	{
+		await navigationService.GoBackAsync();
 	}
 
 	public ObservableCollection<LocationPin> LocationPins { get; } = new();
