@@ -1,0 +1,8 @@
+- Open `MapPinIssue.slnx`
+- Run iOS app on a simulator
+- Use "Add new pin" button to add some pins on the first page (MainPage)
+- Use "Go to Second Page" button
+- Use "Add new pin" button to add some pins on the second page (SecondPage)
+- Use "Go to Main Page" button
+- Notice pins from the first instance of MainPage are shown
+- Notice "Remove last pin" and "Clear all pins" buttons have no effect on the map
