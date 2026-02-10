@@ -4,9 +4,9 @@ using CommunityToolkit.Maui.Alerts;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Maps;
 
-public partial class MainPage : ContentPage
+public partial class SecondPage : ContentPage
 {
-	public MainPage(MainPageViewModel viewModel)
+	public SecondPage(SecondPageViewModel viewModel)
 	{
 		BindingContext = viewModel;
 		InitializeComponent();
@@ -22,30 +22,30 @@ public partial class MainPage : ContentPage
 			Address = "Ukraine",
 			ImageSource = ImageSource.FromUri(new Uri("https://www.gamesatlas.com/images/football/teams/ukraine/dynamo-kyiv.png"))
 		};
-		var pinSimferopol = new CustomPin()
-		{
-			Label = "Simferopol",
-			Location = new Location(44.95719, 34.11079),
-			Address = "Crimea, Ukraine",
-			ImageSource = ImageSource.FromResource("MauiMaps.Resources.EmbeddedImages.Tavriya.png")
-		};
+		// var pinSimferopol = new CustomPin()
+		// {
+		// 	Label = "Simferopol",
+		// 	Location = new Location(44.95719, 34.11079),
+		// 	Address = "Crimea, Ukraine",
+		// 	ImageSource = ImageSource.FromResource("MauiMaps.Resources.EmbeddedImages.Tavriya.png")
+		// };
 		MyMap.Pins.Add(pinKyiv);
-		MyMap.Pins.Add(pinSimferopol);
+		// MyMap.Pins.Add(pinSimferopol);
 		pinKyiv.InfoWindowClicked += async delegate
 		{
 			await Toast.Make("The capital of Ukraine").Show();
 		};
-		pinSimferopol.MarkerClicked += async delegate
-		{
-			await Toast.Make("Welcome to Crimea").Show();
-		};
+		// pinSimferopol.MarkerClicked += async delegate
+		// {
+		// 	await Toast.Make("Welcome to Crimea").Show();
+		// };
 		MyMap.MoveToRegion(new MapSpan(new Location(47, 31), 10, 15));
 	}
 
-	void OnNavigateToSecondPageClicked(object? sender, EventArgs e)
+	void OnNavigateToMainPageClicked(object? sender, EventArgs e)
 	{
 		var services = Application.Current!.Handler!.MauiContext!.Services;
-		var secondPage = services.GetRequiredService<SecondPage>();
-		Application.Current.Windows[0].Page = secondPage;
+		var mainPage = services.GetRequiredService<MainPage>();
+		Application.Current.Windows[0].Page = mainPage;
 	}
 }

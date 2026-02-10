@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="MauiMaps.MainPage"
+    x:Class="MauiMaps.SecondPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mauiMaps="clr-namespace:MauiMaps"
     xmlns:models="clr-namespace:MauiMaps.Models"
     xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
-    x:DataType="mauiMaps:MainPageViewModel"
+    x:DataType="mauiMaps:SecondPageViewModel"
     Shell.NavBarIsVisible="False">
 
 	<Grid>
@@ -32,8 +32,8 @@
 			            BackgroundColor="White">
 				<HorizontalStackLayout>
 					<Button
-		                Clicked="OnNavigateToSecondPageClicked"
-		                Text="Go to Second Page" />
+		                Clicked="OnNavigateToMainPageClicked"
+		                Text="Go to Main Page" />
 				</HorizontalStackLayout>
 			</ScrollView>
 			<ScrollView Orientation="Horizontal"
